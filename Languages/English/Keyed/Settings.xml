@@ -14,4 +14,13 @@ Influence 0: ignore size / 1: proportional / 2: squared</DBHW_Formula>
 Water consumption and bathroom frequency are unchanged. Bedpans are excluded.
 Fractional filth uses stochastic rounding, capped at 100 units per attempt. Changes apply to the next production event.</DBHW_Notes>
   <DBHW_Reset>Restore defaults</DBHW_Reset>
+  <DBHW_StatReport>Actual body size: {0}
+Effective waste multiplier: {1}x
+Original DBH Flush size: {2}%</DBHW_StatReport>
+  <DBHW_StatFormula>Multiplier = BodySize^{1} × {0}
+Regular / latrine: 14 × Flush size × multiplier
+Advanced: 7 × Flush size × multiplier
+Outdoors: 10 × multiplier</DBHW_StatFormula>
+  <DBHW_StatDisabled>Size scaling is disabled or inactive; original production is shown.</DBHW_StatDisabled>
+  <DBHW_StatLimits>Expected production per use, not per day. Excludes bedpans and spacer toilets. Remaining latrine capacity, sewage disposal and Lite mode may change actual accumulation. Outdoor sewage is separate from filth object count. Reopen the info card after changing settings to refresh the displayed values.</DBHW_StatLimits>
 </LanguageData>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <DBHW_WasteFactor.label>오물 발생 배율</DBHW_WasteFactor.label>
+  <DBHW_WasteFactor.description>이 캐릭터가 만드는 오물량의 배율입니다. 100%는 원본과 같은 양입니다.</DBHW_WasteFactor.description>
+  <DBHW_ToiletWaste.label>1회 오물량 (일반·재래식 변기)</DBHW_ToiletWaste.label>
+  <DBHW_ToiletWaste.description>일반 변기 또는 재래식 변기를 한 번 사용할 때의 예상 하수 발생량입니다. 시설 용량과 처리 조건 적용 전의 값입니다.</DBHW_ToiletWaste.description>
+  <DBHW_AdvancedWaste.label>1회 오물량 (고급 변기)</DBHW_AdvancedWaste.label>
+  <DBHW_AdvancedWaste.description>고급 변기를 한 번 사용할 때의 예상 하수 발생량입니다.</DBHW_AdvancedWaste.description>
+  <DBHW_OutdoorWaste.label>1회 오물량 (야외 배변)</DBHW_OutdoorWaste.label>
+  <DBHW_OutdoorWaste.description>야외에서 한 번 배변할 때 지면에 추가되는 하수량입니다. 별도로 생성되는 바닥 오물 물체는 포함하지 않습니다.</DBHW_OutdoorWaste.description>
+</LanguageData>

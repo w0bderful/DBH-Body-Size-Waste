@@ -14,4 +14,13 @@
 물 소비량과 화장실 방문 빈도는 유지됩니다. 요강에는 적용하지 않습니다.
 바닥 오물의 소수점은 확률적으로 반올림하며, 한 번에 최대 100단위까지 시도합니다. 설정은 다음 배출부터 적용됩니다.</DBHW_Notes>
   <DBHW_Reset>기본값 복원</DBHW_Reset>
+  <DBHW_StatReport>실제 신체 크기: {0}
+적용 오물 배율: {1}배
+DBH 원본 Flush size: {2}%</DBHW_StatReport>
+  <DBHW_StatFormula>배율 = 신체 크기^{1} × {0}
+일반·재래식: 14 × Flush size × 배율
+고급: 7 × Flush size × 배율
+야외: 10 × 배율</DBHW_StatFormula>
+  <DBHW_StatDisabled>크기 패치가 꺼져 있거나 적용되지 않아 원본 발생량을 표시합니다.</DBHW_StatDisabled>
+  <DBHW_StatLimits>배변 1회 기준 예상값이며 일일 생산량이 아닙니다. 요강·미래형 변기는 제외됩니다. 재래식 변기의 남은 용량, 하수 처리, Lite 모드 등의 조건에 따라 실제 축적량은 달라질 수 있습니다. 야외 수치는 바닥 오물 물체 개수와 별개입니다. 설정 변경 후 정보창을 다시 열면 최신 값이 표시됩니다.</DBHW_StatLimits>
 </LanguageData>
