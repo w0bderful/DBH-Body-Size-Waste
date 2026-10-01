@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <DBHW_Intro>신체 크기에 따른 오물 발생량</DBHW_Intro>
+  <DBHW_Inactive>패치가 적용되지 않았습니다. Player.log의 [DBH Body Size Waste] 오류를 확인하세요.</DBHW_Inactive>
+  <DBHW_Enable>신체 크기 오물 패치 사용</DBHW_Enable>
+  <DBHW_Multiplier>전체 오물 배율: {0}배 (0~10)</DBHW_Multiplier>
+  <DBHW_Influence>신체 크기 반영 강도: {0} (0~2)</DBHW_Influence>
+  <DBHW_Formula>발생량 = 기존 발생량 × 전체 배율 × 신체 크기^반영 강도
+강도 0: 크기 무시 / 1: 크기에 비례 / 2: 크기의 제곱에 비례</DBHW_Formula>
+  <DBHW_Ground>바닥에 남는 대변·소변 오물 수량에도 적용</DBHW_Ground>
+  <DBHW_Examples>현재 설정 예시 (기존 발생량 대비)</DBHW_Examples>
+  <DBHW_Example>신체 크기 {0} → {1}배</DBHW_Example>
+  <DBHW_Notes>변기·재래식 변기·야외 배변에 적용됩니다. 실제 BodySize를 사용하므로 성장과 종족·유전자 등의 크기 변경을 반영합니다.
+물 소비량과 화장실 방문 빈도는 유지됩니다. 요강에는 적용하지 않습니다.
+바닥 오물의 소수점은 확률적으로 반올림하며, 한 번에 최대 100단위까지 시도합니다. 설정은 다음 배출부터 적용됩니다.</DBHW_Notes>
+  <DBHW_Reset>기본값 복원</DBHW_Reset>
+</LanguageData>

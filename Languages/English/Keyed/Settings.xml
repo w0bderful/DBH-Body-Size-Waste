@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <DBHW_Intro>Waste production by body size</DBHW_Intro>
+  <DBHW_Inactive>Patch inactive. Check Player.log for [DBH Body Size Waste] errors.</DBHW_Inactive>
+  <DBHW_Enable>Enable body size waste scaling</DBHW_Enable>
+  <DBHW_Multiplier>Overall waste multiplier: {0}x (0-10)</DBHW_Multiplier>
+  <DBHW_Influence>Body size influence: {0} (0-2)</DBHW_Influence>
+  <DBHW_Formula>Output = original output × multiplier × BodySize^influence
+Influence 0: ignore size / 1: proportional / 2: squared</DBHW_Formula>
+  <DBHW_Ground>Also scale bodily feces/urine filth on the ground</DBHW_Ground>
+  <DBHW_Examples>Preview (relative to original output)</DBHW_Examples>
+  <DBHW_Example>Body size {0} → {1}x waste</DBHW_Example>
+  <DBHW_Notes>Applies to toilets, latrines and outdoor defecation. Uses actual BodySize including growth, race and gene modifiers.
+Water consumption and bathroom frequency are unchanged. Bedpans are excluded.
+Fractional filth uses stochastic rounding, capped at 100 units per attempt. Changes apply to the next production event.</DBHW_Notes>
+  <DBHW_Reset>Restore defaults</DBHW_Reset>
+</LanguageData>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>DBH - Body Size Waste</name>
+  <author>Local Patch</author>
+  <packageId>local.dbh.bodysizewaste</packageId>
+  <supportedVersions><li>1.6</li></supportedVersions>
+  <modDependencies>
+    <li><packageId>brrainz.harmony</packageId><displayName>Harmony</displayName><steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl></li>
+    <li><packageId>Dubwise.DubsBadHygiene</packageId><displayName>Dubs Bad Hygiene</displayName><steamWorkshopUrl>steam://url/CommunityFilePage/836308268</steamWorkshopUrl></li>
+  </modDependencies>
+  <loadAfter><li>brrainz.harmony</li><li>Dubwise.DubsBadHygiene</li></loadAfter>
+  <description>Scales Dubs Bad Hygiene sewage production by the user's actual BodySize. Includes adjustable output multiplier, body size influence, and optional ground filth scaling. Configure under Options > Mod settings > DBH - Body Size Waste.
+
+오물 발생량을 실제 신체 크기에 맞춰 조절합니다. 모드 설정에서 전체 배율, 신체 크기 반영 강도, 바닥 배설물 적용 여부를 변경할 수 있습니다. Dubs Bad Hygiene 뒤에 배치하세요.</description>
+</ModMetaData>
