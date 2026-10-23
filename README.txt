@@ -1,64 +1,64 @@
-DBH - Body Size Waste / 신체 크기별 오물량
-버전: 1.2.0 (2026-10-24)
-대상: RimWorld 1.7 / Dubs Bad Hygiene 3.2.3250 (1.6용 DLL은 1.6/Assemblies에 유지)
+DBH - Body Size Waste
+Version: 1.2.0 (2026-10-24)
+Target: RimWorld 1.7 / Dubs Bad Hygiene 3.2.3250 (the 1.6 DLL is kept in 1.6/Assemblies)
 
-사용 방법
-1. Harmony, Dubs Bad Hygiene, DBH - Body Size Waste 순으로 활성화합니다.
-2. 옵션 > 모드 설정 > DBH - Body Size Waste를 엽니다.
-3. 전체 배율(0~10), 신체 크기 반영 강도(0~2)를 조절합니다.
-   기본 공식: 기존 오물량 × 실제 BodySize × 전체 배율.
-   반영 강도를 바꾸면 BodySize 대신 BodySize^강도를 사용합니다.
-   강도 0 = 크기 무시, 1 = 비례, 2 = 제곱 비례.
-4. 변경은 다음 배출부터 적용되며 이전에 저장된 오물량은 바꾸지 않습니다.
+How to use
+1. Enable Harmony, Dubs Bad Hygiene and DBH - Body Size Waste in that order.
+2. Open Options > Mod settings > DBH - Body Size Waste.
+3. Adjust the overall multiplier (0-10) and body size influence (0-2).
+   Default formula: original waste x actual BodySize x overall multiplier.
+   Changing the influence uses BodySize^influence instead of BodySize.
+   Influence 0 = ignore size, 1 = linear, 2 = squared.
+4. Changes apply from the next use. Waste already stored is not changed.
 
-기본값 예시
-캐릭터 정보창(i)에서 오물 발생 배율과 변기 종류별 1회 예상량을 확인할 수 있습니다.
-배변 욕구가 있는 폰에 표시되며, 항목을 선택하면 계산식과 제한 조건이 나옵니다.
-설정 변경 후 정보창을 다시 열면 최신 수치가 표시됩니다.
+Default examples
+The pawn info card (i) shows the waste factor and the expected waste per use for each toilet type.
+It is shown for pawns with a bladder need. Select an entry to see the formula and limits.
+Reopen the info card after changing settings to see the latest values.
 
-신체 크기 0.5: 기존의 0.5배
-신체 크기 1.0: 기존과 동일
-신체 크기 2.0: 기존의 2배
-신체 크기 4.0: 기존의 4배
-전체 배율을 2로 설정하면 위 수치가 모두 2배가 됩니다.
+Body size 0.5: 0.5x the original
+Body size 1.0: same as the original
+Body size 2.0: 2x the original
+Body size 4.0: 4x the original
+Setting the overall multiplier to 2 doubles all of the values above.
 
-적용 범위
-- 일반/고급 변기, 재래식 변기: 배출 순간 생성되는 하수량을 조절.
-- 재래식 변기 수거 오물: 축적된 하수량을 통해 자연스럽게 반영.
-- 야외 배변: 지면에 추가되는 하수량을 조절.
-- 바닥 대변/소변: 설정에서 선택 가능. 소수점은 확률적으로 반올림.
-  예: 0.5단위는 평균적으로 두 번에 한 번 생성. 바닥 오물은 한 번에
-  최대 100단위를 시도하며, 실제 표시/축적은 게임의 지형·오물 제한을 따름.
-- 나이, 종족, 유전자 및 다른 모드가 실제 Pawn.BodySize에 반영한 값을 사용.
-  그래픽 크기만 바꾸는 모드는 반영되지 않음.
+Scope
+- Regular/advanced toilets and latrines: scales the sewage produced at the moment of use.
+- Waste collected from latrines: reflected naturally through the accumulated sewage.
+- Outdoor defecation: scales the sewage added to the ground.
+- Ground faeces/urine: optional in settings. Fractions are rounded stochastically.
+  Example: 0.5 units appear about every other time on average. Ground filth is attempted
+  up to 100 units at once; actual display and accumulation follow the game's terrain and filth limits.
+- Uses the actual Pawn.BodySize, including changes from age, race, genes and other mods.
+  Mods that only change graphic size are not reflected.
 
-유지되는 동작과 제한
-- 원본의 물 소비량, 배변 빈도, 정화 속도, 탱크/변기 용량은 변경하지 않음.
-- DBH 기존 Flush size 설정에 추가로 곱해짐.
-- 재래식 변기는 원본 저장 용량까지 축적됨. 한 번의 배출량이 남은 용량을
-  초과하면 원본의 상한 처리에 따라 초과분이 사라질 수 있음.
-- 미래형 변기의 오물 0 및 Lite Mode의 생략 동작을 유지.
-- 요강은 환자용 물건 1개를 생성하고 청소 시 삭제하는 별도 구조라 제외.
-- 다른 모드가 자체 구현한 배변 작업/flushSize 재정의는 별도 호환 작업이 필요할 수 있음.
-- 전체 계산 배율은 비정상적인 신체 크기에 대비해 최대 10000배로 제한.
-- 멀티플레이 동기화는 검증하지 않음. 싱글플레이용으로 제작.
+Unchanged behavior and limits
+- Water use, toilet frequency, treatment speed and tank/toilet capacity of the original are unchanged.
+- Stacks on top of DBH's own Flush size setting.
+- Latrines fill up to their original capacity. If a single use exceeds the remaining
+  capacity, the excess may be lost as handled by the original cap.
+- Zero waste from futuristic toilets and skipping in Lite Mode are kept.
+- Bedpans are excluded: they create one patient item and delete it when cleaned, a separate system.
+- Other mods with their own toilet jobs or flushSize overrides may need extra compatibility work.
+- The overall factor is capped at 10000x to guard against abnormal body sizes.
+- Multiplayer sync has not been tested. Made for single player.
 
-안전한 패치 방식
-원본 워크숍 파일을 수정하지 않는 별도 Harmony 패치입니다.
-하수 이동이나 청소 때 재계산하지 않으므로 청소 담당자의 크기는 무관합니다.
-원본 DBH의 패치 대상 구조가 바뀌면 오류를 기록하고 자체 패치를 해제합니다.
-Player.log에서 다음 문구로 정상 적용을 확인할 수 있습니다:
+Safe patching
+A standalone Harmony patch that does not modify the original workshop files.
+Nothing is recalculated when sewage moves or is cleaned, so the cleaner's size does not matter.
+If the patched DBH structure changes, an error is logged and this patch removes itself.
+You can confirm it is active by this line in Player.log:
 [DBH Body Size Waste] Active:
 
-검증
-- 현재 설치된 RimWorld/DBH/Harmony DLL 참조로 컴파일 성공, 경고 0.
-- 크기/배율/지수 및 비정상 입력 계산 12건 통과.
-- 변기, 야외 배변, 실금의 실제 IL 대상과 교체 호출 시그니처 검증 통과.
-- 실제 Harmony 패치 코드 생성: 배출 콜백 3개 + flushSize getter 통과.
-- 게임 내 플레이와 설정 화면 렌더링은 아직 실행 검증하지 않음.
-  처음 실행 후 크기 다른 폰이 각각 변기를 사용했을 때 증가량을 비교하세요.
+Verification
+- Compiles against the installed RimWorld/DBH/Harmony DLLs with 0 warnings.
+- Waste math checks for size, multiplier, exponent and invalid input pass.
+- Real IL targets and replacement call signatures for toilets, outdoor defecation and accidents pass.
+- Real Harmony patch emission: 3 waste callbacks + flushSize getter pass.
+- In-game play and settings window rendering have not been run yet.
+  After first launch, compare the increase when pawns of different sizes use a toilet.
 
-개발
-Source/build.ps1로 로컬 설치 DLL을 참조해 재빌드할 수 있습니다(.NET 10 SDK 필요).
-Tests/test.ps1은 실제 DBH DLL을 대상으로 IL과 Harmony 패치 생성을 검증합니다.
-원본 게임/모드 DLL은 배포물에 포함하지 않습니다.
+Development
+Source/build.ps1 rebuilds against the locally installed DLLs (.NET 10 SDK required).
+Tests/test.ps1 checks the IL and Harmony patch emission against the real DBH DLL.
+The original game/mod DLLs are not included in the release.
