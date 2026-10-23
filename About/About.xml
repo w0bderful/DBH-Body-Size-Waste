@@ -10,7 +10,31 @@
     <li><packageId>Dubwise.DubsBadHygiene</packageId><displayName>Dubs Bad Hygiene</displayName><steamWorkshopUrl>steam://url/CommunityFilePage/836308268</steamWorkshopUrl></li>
   </modDependencies>
   <loadAfter><li>brrainz.harmony</li><li>Dubwise.DubsBadHygiene</li></loadAfter>
-  <description>Scales Dubs Bad Hygiene sewage production by the user's actual BodySize. Includes adjustable output multiplier, body size influence, and optional ground filth scaling. Configure under Options > Mod settings > DBH - Body Size Waste.
+  <description>Dubs Bad Hygiene의 오물 발생량을 폰의 실제 신체 크기(BodySize)에 맞춰 조절합니다.
+기본 계산: 원래 발생량 × 신체 크기 × 전체 배율.
 
-오물 발생량을 실제 신체 크기에 맞춰 조절합니다. 모드 설정에서 전체 배율, 신체 크기 반영 강도, 바닥 배설물 적용 여부를 변경할 수 있습니다. Dubs Bad Hygiene 뒤에 배치하세요.</description>
+[기능]
+• 변기·재래식 변기·야외 배변에서 나오는 하수량에 신체 크기 반영
+• 전체 오물 배율: 0~10배
+• 신체 크기 반영 강도: 0~2 (0 = 크기 무시, 1 = 비례, 2 = 제곱 비례)
+• 바닥 대변·소변 수량에도 적용할지 선택
+• 설정 화면에서 신체 크기별 배율 미리보기
+• 캐릭터 정보창(i)에 오물 발생 배율과 변기 종류별 1회 예상량 표시
+
+설정: 옵션 → 모드 설정 → DBH - Body Size Waste
+
+---
+
+Scales Dubs Bad Hygiene waste by each pawn's actual BodySize.
+Default: original amount × body size × overall multiplier.
+
+[Features]
+• Body size applies to sewage from toilets, latrines and outdoor defecation
+• Overall waste multiplier: 0–10×
+• Body size influence: 0–2 (0 = ignore size, 1 = linear, 2 = squared)
+• Optional scaling of ground faeces and urine filth
+• Multiplier preview by body size in the settings window
+• Pawn info card (i) shows the waste factor and expected waste per use for each toilet type
+
+Settings: Options → Mod settings → DBH - Body Size Waste</description>
 </ModMetaData>
