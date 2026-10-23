@@ -1,62 +1,60 @@
 # DBH - Body Size Waste
 
-RimWorld 1.6·1.7용 **Dubs Bad Hygiene 신체 크기별 오물량 패치**입니다.
+A **body-size waste patch for Dubs Bad Hygiene** on RimWorld 1.6 / 1.7.
 
-기본 계산: **기존 발생량 × 실제 Pawn.BodySize × 설정 배율**.
-신체 크기가 0.5면 절반, 2면 두 배의 오물이 발생합니다.
+Default formula: **original amount × actual Pawn.BodySize × configured multiplier**.
+A body size of 0.5 produces half the waste, and a body size of 2 produces twice as much.
 
-## 기능
+## Features
 
-- 전체 오물 배율: 0~10배
-- 신체 크기 반영 강도: 0~2 (0은 크기 무시, 1은 비례, 2는 제곱 비례)
-- 바닥 대변·소변 수량에 적용할지 선택
-- 한국어·영어 설정 화면 및 배율 미리보기
-- 캐릭터 정보창(i)의 기본 정보에 오물 발생 배율 및 일반·고급 변기/야외 배변 1회 예상량 표시
-- 변기·재래식 변기·야외 배변 적용
-- 원본 모드 파일을 변경하지 않는 독립 Harmony 패치
+- Overall waste multiplier: 0–10×
+- Body size influence: 0–2 (0 ignores size, 1 is linear, 2 is squared)
+- Optional scaling of ground faeces and urine filth
+- Korean and English settings window with a multiplier preview
+- Pawn info card (i) shows the waste factor and expected waste per use for regular toilets, advanced toilets and outdoor defecation
+- Applies to toilets, latrines and outdoor defecation
+- Standalone Harmony patch that does not modify the original mod's files
 
-## 설치
+## Installation
 
-저장소를 다운로드해 `About`, `1.6`, `1.7`, `Defs`, `Languages` 폴더와 `LoadFolders.xml`이 들어 있는 최상위 폴더를
-`RimWorld/Mods/DBHBodySizeWaste`에 넣으세요. 완성된 DLL을 포함하므로 빌드는 선택 사항입니다.
+Download the repository and put the top-level folder containing `About`, `1.6`, `1.7`, `Defs`, `Languages`
+and `LoadFolders.xml` in `RimWorld/Mods/DBHBodySizeWaste`. The built DLLs are included, so building is optional.
 
-로드 순서:
+Load order:
 
 1. [Harmony](https://steamcommunity.com/sharedfiles/filedetails/?id=2009463077)
 2. [Dubs Bad Hygiene](https://steamcommunity.com/sharedfiles/filedetails/?id=836308268)
 3. DBH - Body Size Waste
 
-`옵션 → 모드 설정 → DBH - Body Size Waste`에서 조절합니다.
-변경은 다음 배출부터 적용됩니다.
-캐릭터를 선택하고 정보창(i)을 열면 오물 관련 수치를 볼 수 있습니다.
-각 항목을 클릭하면 신체 크기, 원본 Flush size, 계산식과 적용 조건을 표시합니다.
-설정 변경 후에는 정보창을 다시 열어 갱신하세요. 배변 욕구가 없는 폰에는 표시하지 않습니다.
+Adjust the options under `Options → Mod settings → DBH - Body Size Waste`.
+Changes apply from the next use.
+Select a pawn and open the info card (i) to see its waste values.
+Click an entry to see the body size, the original Flush size, the formula and the conditions that apply.
+Reopen the info card after changing settings to refresh it. Pawns without a bladder need show nothing.
 
-## 범위와 제한
+## Scope and limits
 
-실제 `Pawn.BodySize`를 사용합니다. 그래픽 크기만 바꾸는 설정은 반영하지 않습니다.
-물 소비량·배변 빈도·시설 용량·정화 속도는 유지합니다. 요강은 제외합니다.
-다른 모드가 자체 구현한 배변 작업에는 추가 호환 작업이 필요할 수 있습니다.
-자세한 동작과 상한은 [README.txt](README.txt)를 참고하세요.
+- Uses the actual `Pawn.BodySize`. Settings that only change graphic size are not reflected.
+- Water use, toilet frequency, fixture capacity and treatment speed are unchanged. Bedpans are excluded.
+- Stacks on top of DBH's own Flush size setting.
+- Latrines fill up to their original capacity. If a single use exceeds the remaining capacity, the excess may be lost as in the original.
+- Ground filth is rounded stochastically (0.5 units appear about every other time), up to 100 units per attempt.
+- The overall factor is capped at 10000× to guard against abnormal body sizes.
+- Other mods with their own toilet jobs or flushSize overrides may need extra compatibility work.
 
-현재 기준은 **RimWorld 1.7 / Dubs Bad Hygiene 3.2.3250**입니다. 1.6용 DLL(DBH 3.1.2800 기준)은 `1.6/Assemblies`에 유지됩니다.
-컴파일, 계산 테스트 및 실제 DLL 대상 Harmony 패치 생성 검증을 통과했습니다.
-**게임 내 플레이와 멀티플레이는 아직 검증하지 않았습니다.**
+Current target: **RimWorld 1.7 / Dubs Bad Hygiene 3.2.3250**. The 1.6 DLL (built for DBH 3.1.2800) is kept in `1.6/Assemblies`.
+Compilation, math tests and Harmony patch emission against the real DLLs pass.
+**In-game play and multiplayer have not been tested yet.**
 
-## 빌드
+## Building
 
-.NET 10 SDK와 로컬 RimWorld·필수 모드 DLL이 필요합니다. `./Tests/test.ps1`은 빌드 후 실제 DBH DLL을 대상으로 IL·Harmony 검증을 실행합니다.
+Requires the .NET 10 SDK and local RimWorld and dependency DLLs. `./Tests/test.ps1` builds the mod, then runs IL and Harmony checks against the real DBH DLL.
 
 ```powershell
 ./Source/build.ps1 -GameDir 'D:\SteamLibrary\steamapps\common\RimWorld' -WorkshopDir 'D:\SteamLibrary\steamapps\workshop\content\294100'
 ```
 
-결과: `1.7/Assemblies/DBHBodySizeWaste.dll`.
-원본 게임·Harmony·Dubs Bad Hygiene DLL은 이 저장소에 포함하지 않습니다.
+Output: `1.7/Assemblies/DBHBodySizeWaste.dll`.
+The game, Harmony and Dubs Bad Hygiene DLLs are not included in this repository.
 
-## English
-
-An independent compatibility patch that scales Dubs Bad Hygiene waste by actual pawn body size.
-Includes a configurable overall multiplier, body-size exponent, and optional ground filth scaling.
-Applies to toilets, latrines and outdoor defecation. Bedpans are excluded.
-Load after Harmony and Dubs Bad Hygiene. This is not an official Dubwise release.
+This is not an official Dubwise release.
