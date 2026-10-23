@@ -1,6 +1,6 @@
 DBH - Body Size Waste / 신체 크기별 오물량
-버전: 1.1.0 (2026-10-01)
-대상: RimWorld 1.6 / 설치된 Dubs Bad Hygiene 3.1.2800
+버전: 1.2.0 (2026-10-24)
+대상: RimWorld 1.7 / Dubs Bad Hygiene 3.2.3250 (1.6용 DLL은 1.6/Assemblies에 유지)
 
 사용 방법
 1. Harmony, Dubs Bad Hygiene, DBH - Body Size Waste 순으로 활성화합니다.
@@ -59,5 +59,6 @@ Player.log에서 다음 문구로 정상 적용을 확인할 수 있습니다:
   처음 실행 후 크기 다른 폰이 각각 변기를 사용했을 때 증가량을 비교하세요.
 
 개발
-Source/build.ps1로 로컬 설치 DLL을 참조해 재빌드할 수 있습니다.
+Source/build.ps1로 로컬 설치 DLL을 참조해 재빌드할 수 있습니다(.NET 10 SDK 필요).
+Tests/test.ps1은 실제 DBH DLL을 대상으로 IL과 Harmony 패치 생성을 검증합니다.
 원본 게임/모드 DLL은 배포물에 포함하지 않습니다.

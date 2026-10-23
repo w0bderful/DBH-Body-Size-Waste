@@ -1,6 +1,6 @@
 # DBH - Body Size Waste
 
-RimWorld 1.6용 **Dubs Bad Hygiene 신체 크기별 오물량 패치**입니다.
+RimWorld 1.6·1.7용 **Dubs Bad Hygiene 신체 크기별 오물량 패치**입니다.
 
 기본 계산: **기존 발생량 × 실제 Pawn.BodySize × 설정 배율**.
 신체 크기가 0.5면 절반, 2면 두 배의 오물이 발생합니다.
@@ -17,7 +17,7 @@ RimWorld 1.6용 **Dubs Bad Hygiene 신체 크기별 오물량 패치**입니다.
 
 ## 설치
 
-저장소를 다운로드해 `About`, `Assemblies`, `Languages` 폴더가 들어 있는 최상위 폴더를
+저장소를 다운로드해 `About`, `1.6`, `1.7`, `Defs`, `Languages` 폴더와 `LoadFolders.xml`이 들어 있는 최상위 폴더를
 `RimWorld/Mods/DBHBodySizeWaste`에 넣으세요. 완성된 DLL을 포함하므로 빌드는 선택 사항입니다.
 
 로드 순서:
@@ -39,19 +39,19 @@ RimWorld 1.6용 **Dubs Bad Hygiene 신체 크기별 오물량 패치**입니다.
 다른 모드가 자체 구현한 배변 작업에는 추가 호환 작업이 필요할 수 있습니다.
 자세한 동작과 상한은 [README.txt](README.txt)를 참고하세요.
 
-현재 기준은 **RimWorld 1.6 / Dubs Bad Hygiene 3.1.2800**입니다.
+현재 기준은 **RimWorld 1.7 / Dubs Bad Hygiene 3.2.3250**입니다. 1.6용 DLL(DBH 3.1.2800 기준)은 `1.6/Assemblies`에 유지됩니다.
 컴파일, 계산 테스트 및 실제 DLL 대상 Harmony 패치 생성 검증을 통과했습니다.
 **게임 내 플레이와 멀티플레이는 아직 검증하지 않았습니다.**
 
 ## 빌드
 
-Windows의 .NET Framework C# 컴파일러와 로컬 RimWorld·필수 모드 DLL이 필요합니다.
+.NET 10 SDK와 로컬 RimWorld·필수 모드 DLL이 필요합니다. `./Tests/test.ps1`은 빌드 후 실제 DBH DLL을 대상으로 IL·Harmony 검증을 실행합니다.
 
 ```powershell
 ./Source/build.ps1 -GameDir 'D:\SteamLibrary\steamapps\common\RimWorld' -WorkshopDir 'D:\SteamLibrary\steamapps\workshop\content\294100'
 ```
 
-결과: `Assemblies/DBHBodySizeWaste.dll`.
+결과: `1.7/Assemblies/DBHBodySizeWaste.dll`.
 원본 게임·Harmony·Dubs Bad Hygiene DLL은 이 저장소에 포함하지 않습니다.
 
 ## English

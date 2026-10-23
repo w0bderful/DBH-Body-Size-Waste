@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <OutputPath>bin\</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <GameDir Condition="'$(GameDir)' == ''">D:\SteamLibrary\steamapps\common\RimWorld</GameDir>
+    <WorkshopDir Condition="'$(WorkshopDir)' == ''">D:\SteamLibrary\steamapps\workshop\content\294100</WorkshopDir>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp" HintPath="$(GameDir)\Assembly-CSharp.dll" Private="false" />
+    <Reference Include="UnityStubs" HintPath="$(GameDir)\UnityStubs.dll" Private="false" />
+    <Reference Include="BadHygiene" HintPath="$(WorkshopDir)\836308268\1.7\Assemblies\BadHygiene.dll" Private="false" />
+    <Reference Include="0Harmony" HintPath="$(WorkshopDir)\2009463077\1.7\Assemblies\0Harmony.dll" Private="false" />
+    <Reference Include="DBHBodySizeWaste" HintPath="..\1.7\Assemblies\DBHBodySizeWaste.dll" Private="false" />
+  </ItemGroup>
+</Project>
